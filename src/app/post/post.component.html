@@ -1,0 +1,12 @@
+<div *ngFor="let post of Posts">
+    <span class="title">{{post.title}}</span>
+    <span class="sub-title">{{post.subtitle}}</span>
+    <div>
+        <img class="avatar" src="../../../assets/avatar1.jpg" alt="avatar">
+        <span class="user">{{post.author.username}}</span>
+        <span class="timestamp">{{post.timestamp | date }}</span>
+        <span class="content">
+            {{post.content}}
+        </span>
+    </div>
+</div>

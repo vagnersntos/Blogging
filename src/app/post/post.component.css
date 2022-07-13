@@ -1,0 +1,72 @@
+* {
+    font-family: Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.title {
+    position: absolute;
+    width: 844.74px;
+    height: 97px;
+    left: 574.05px;
+    top: 618px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: #000000;
+}
+
+.sub-title {
+    position: absolute;
+    width: 844.74px;
+    height: 42px;
+    left: 574.05px;
+    top: 725px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #939393;
+}
+
+.avatar {
+    position: absolute;
+    width: 50px;
+    height: 51px;
+    left: 573px;
+    top: 779px;
+    border-radius: 50px;
+}
+
+.user {
+    position: absolute;
+    width: 148px;
+    height: 22px;
+    left: 634px;
+    top: 790px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+
+.timestamp {
+    position: absolute;
+    width: 148px;
+    height: 22px;
+    left: 634px;
+    top: 808px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #8A8A8A;
+}
+
+.content {
+    position: absolute;
+    width: 850px;
+    height: 664px;
+    left: 573px;
+    top: 854px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+}

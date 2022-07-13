@@ -1,13 +1,8 @@
-  *{
+  * {
     font-family: Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    /* font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
   }
 
-  .toolbar{
+  .toolbar {
     position: absolute;
     top: 0;
     left: 0;
@@ -16,20 +11,20 @@
     display: flex;
     align-items: center;
     background-color: #03A9F4;
-    }
+  }
 
-    .span-title{
-        color: white;
-        font-weight: 700;
-        size: 24px;
-        margin-left: 573px;
-    }
+  .span-title {
+    color: white;
+    font-weight: 700;
+    size: 24px;
+    margin-left: 573px;
+  }
 
-    .banner{
-        position: absolute;
-        Width: 1920px;
-        Height: 493px;
-        Top: 70px;
-        left: 0;
-        background-image:url("../../assets/header-image.jpg");
-    }
+  .banner {
+    position: absolute;
+    Width: 1920px;
+    Height: 493px;
+    Top: 70px;
+    left: 0;
+    background-image: url("../assets/header-image.jpg");
+  }
