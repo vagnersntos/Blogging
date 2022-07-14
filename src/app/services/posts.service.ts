@@ -9,7 +9,7 @@ import { Post } from '../model/post'
 })
 export class PostsService {
 
-  url = 'http://localhost:3000/posts'
+  baseUrl = 'http://localhost:3000'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,8 +17,15 @@ export class PostsService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  get(): Observable<Post[]> {
-    return this.httpClient.get<Post[]>(this.url)
+  getPosts(): Observable<Post[]> {
+    return this.httpClient.get<Post[]>(this.baseUrl + '/posts')
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
+  getComments(): Observable<Post[]> {
+    return this.httpClient.get<Post[]>(this.baseUrl + '/comments')
       .pipe(
         retry(2),
         catchError(this.handleError))

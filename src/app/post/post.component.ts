@@ -19,13 +19,8 @@ export class PostComponent implements OnInit {
   }
 
   getPosts() {
-    this.PostsService.get().subscribe((Posts: Post[]) => {
+    this.PostsService.getPosts().subscribe((Posts: Post[]) => {
       this.Posts = Posts;
-      Posts.forEach(x=>{
-        const date = new Date(x.timestamp);
-        const formatDate = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'short', year: 'numeric'} ).format(date);
-        console.log(formatDate)
-      })
     });
   }
 }

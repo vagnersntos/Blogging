@@ -6,12 +6,14 @@ import ptBr from '@angular/common/locales/pt';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
+import { ComentsComponent } from './coments/coments.component';
 registerLocaleData(ptBr)
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent
+    PostComponent,
+    ComentsComponent
   ],
   imports: [
     BrowserModule,

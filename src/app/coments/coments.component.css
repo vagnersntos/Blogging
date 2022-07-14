@@ -1,0 +1,27 @@
+* {
+    font-family: Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.cabecalho {
+    position: absolute;
+    width: 216px;
+    height: 24px;
+    left: 574px;
+    top: 1527px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    color: #000000;
+}
+
+.author_comment {
+    position: absolute;
+    width: 348.21px;
+    height: 37px;
+    left: 603.51px;
+    top: 1585px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+    color: #017DB5;
+}
