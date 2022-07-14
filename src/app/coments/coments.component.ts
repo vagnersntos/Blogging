@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
 import { Post } from '../model/post'
 
-
 @Component({
   selector: 'coments',
   templateUrl: './coments.component.html',
@@ -30,33 +29,29 @@ export class ComentsComponent implements OnInit {
     const tree = document.querySelector('div#comment')
     const menu = document.createElement('ul')
 
-    const authorFirst = data.filter((item: { respondsTo: Post; }) => !item.respondsTo)
-    const responseAuthorFirst = data.filter((item: { respondsTo: Post; }) => item.respondsTo)
+    const authorFirst = data.filter((item: { respondsTo: Post; }) => !item.respondsTo)//não responderam
+    const responseAuthorFirst = data.filter((item: { respondsTo: Post; }) => item.respondsTo) // responderam
     const getFirstLis = authorFirst.map(buildTree)
-    const getResponseAuthorFirst = responseAuthorFirst.map(buildTree)
-    // getResponseAuthorFirst.forEach((item: string) => {menu.append(item)})
-
     getFirstLis.forEach((li: string) => { menu.append(li) })
 
     function buildTree(item: Post) {
-     const span = document.createElement('li')
-      span.innerHTML = item.author.username
+      const span = document.createElement('span')
+      const date = new Date(item.timestamp)
+      const dateFormat = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric'} ).format(date)
+      console.log(dateFormat)
+      span.innerHTML = item.author.username + dateFormat + '<br>' + item.content
 
-      if (item.respondsTo !== null) {
-        const children = authorFirst.filter((child: Post) => child.id === item.respondsTo.id)
+      const children = responseAuthorFirst.filter((child: Post) => child.respondsTo.id === item.author.id)
 
-        if (children.length > 0) {
-          span.classList.add('has-children')
-          const subMenu = document.createElement('ul')
-          children.map(buildTree)
-            .forEach((li: string) => subMenu.append(li))
-          span.append(subMenu)
-        }
+      if (children.length > 0) {
+        span.classList.add('has-children')
+        const subMenu = document.createElement('ul')
+        children.map(buildTree)
+          .forEach((li: string) => subMenu.append(li))
+        span.append(subMenu)
       }
-
       return span
     }
-   tree ? tree.append(menu) : null
+    tree ? tree.append(menu) : null
   }
-
 }

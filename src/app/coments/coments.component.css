@@ -16,12 +16,16 @@
 
 .author_comment {
     position: absolute;
-    width: 348.21px;
-    height: 37px;
-    left: 603.51px;
-    top: 1585px;
+    width: 787px;
+    height: 111px;
+    left: 604px;
+    top: 1622px;
+
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 40px;
-    color: #017DB5;
+    /* or 222% */
+    
+    
+    color: #000000;
 }
