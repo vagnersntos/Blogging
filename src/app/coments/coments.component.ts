@@ -27,31 +27,35 @@ export class ComentsComponent implements OnInit {
 
   menuComments = (data: any) => {
     const tree = document.querySelector('div#comment')
-    const menu = document.createElement('ul')
-
+    const menu = document.createElement('div')
     const authorFirst = data.filter((item: { respondsTo: Post; }) => !item.respondsTo)//não responderam
     const responseAuthorFirst = data.filter((item: { respondsTo: Post; }) => item.respondsTo) // responderam
     const getFirstLis = authorFirst.map(buildTree)
     getFirstLis.forEach((li: string) => { menu.append(li) })
 
     function buildTree(item: Post) {
-      const span = document.createElement('span')
+      const span = document.createElement('div')
+      const title =  document.createElement('span')
+      const comment =  document.createElement('p')
       const date = new Date(item.timestamp)
       const dateFormat = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric'} ).format(date)
       console.log(dateFormat)
-      span.innerHTML = item.author.username + dateFormat + '<br>' + item.content
+      title.innerHTML = item.author.username + dateFormat 
+      comment.innerHTML = item.content
+      span.append(title)
+      span.append(comment)
 
       const children = responseAuthorFirst.filter((child: Post) => child.respondsTo.id === item.author.id)
 
       if (children.length > 0) {
         span.classList.add('has-children')
-        const subMenu = document.createElement('ul')
+        const subMenu = document.createElement('ol')
         children.map(buildTree)
           .forEach((li: string) => subMenu.append(li))
         span.append(subMenu)
       }
       return span
     }
-    tree ? tree.append(menu) : null
+    tree?.append(menu)
   }
 }
